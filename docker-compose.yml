@@ -1,0 +1,52 @@
+version: '3.7'
+
+services:
+
+  amelos:
+    build: ./amelos
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 400M
+        reservations:
+          cpus: '0.1'
+          memory: 20M
+    depends_on:
+      - assos-0
+      - assos-1
+          
+
+  assos-0:
+    build: ./assos-0
+
+  assos-1:
+    build: ./assos-1
+
+
+
+  cunda:
+    build: ./cunda
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 300M
+        reservations:
+          memory: 3M
+
+
+  doris:
+    build: ./doris
+
+  emailsender:
+    build: ./emailsender
+
+  ilyosta:
+    build: ./ilyosta
+   
+  kybele-eu-1:
+    build: ./kybele-eu-1
+
+  kybele-eu-1:
+    build: ./kybele-eu-1
