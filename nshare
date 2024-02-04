@@ -1,0 +1,1 @@
+docker create -it -p 139:139 -p 445:445 --name smbsrv -v /home/alper/mytest:/path1 dperson/samba -p -r -u "alper;alper" -s "share:/path1;yes;no;yes;alper"
